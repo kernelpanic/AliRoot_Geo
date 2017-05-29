@@ -94,7 +94,7 @@ enum {kCoordX=0, kCoordY=1, kCoordZ=2};
 // void FindNodes(const Double_t x, const Double_t y, const Double_t z, const Double_t tf, const Int_t Coord=2) ; 
 // TGeoVolumeAssembly * CreateWarmModule_VMAOI();
 void CreateCurvedBundles();
-TGeoVolume * CreateWarmModuleSupport();
+TGeoVolume * CreateWarmModule();
 TGeoVolumeAssembly * CreateBLM();
 TGeoVolumeAssembly * CreatePipeOvalyzed(const TGeoMedium * mat);
 TGeoVolumeAssembly * CreateADAShielding();
@@ -879,7 +879,7 @@ void NewAD2016Aug_Marvin_3()
     Ry180 = new TGeoRotation("Ry180", 180., 180.,   0.) ;  //   3    |   2
     Ry90m = new TGeoRotation("Ry90m",  90., -90., -90.) ;
     Ry90  = new TGeoRotation("Ry90" ,  90.,  90., -90.) ;
-    TGeoVolume * voTest = CreateWarmModuleSupport();
+    TGeoVolume * voTest = CreateWarmModule();
     // TGeoVolume * voTest = CreateOldADA();
     // TGeoVolume * voTest = CreatePump();
     voTest -> SetTransparency(0);
@@ -4539,7 +4539,7 @@ TGeoVolumeAssembly * CreateBLM()
 
 
 
-TGeoVolume * CreateWarmModuleSupport()
+TGeoVolume * CreateWarmModule()
 {
   TGeoVolumeAssembly * ST0521057_VAMPA = new TGeoVolumeAssembly("ST0521057_VAMPA");
   /////////////////////////////////////////////////////////////////////////////
